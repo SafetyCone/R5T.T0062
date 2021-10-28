@@ -1,0 +1,2 @@
+# R5T.T0062
+ISeriviceAction, IServiceActionOperator, and related extension method bases.
