@@ -15,7 +15,7 @@ namespace System
     {
         /// <summary>
         /// Get a do-nothing instance communicating that a service is added elsewhere (perhaps later, perhaps earlier).
-        /// Useful for when a dependent service AddXAction() method requires an IServiceAction instance, but you know it will be added elsewhere (or are willing to risk the error if not) so you don't want to re-create the service action instance, or don't want decided what implementation to use for the instance.
+        /// Useful for when a dependent service AddXAction() method requires an <see cref="IServiceAction{TService}"/> instance, but you know it will be added elsewhere (or are willing to risk the error if not) so you don't want to re-create the service action instance, or don't want decided what implementation to use for the instance.
         /// </summary>
         /// <remarks>
         /// Note: there should be no reason to use this method since it is now easy to pass service action instances. Still, this method is provided if needed. In that case, just ignore the obsolete warning at the call site.
@@ -29,7 +29,7 @@ namespace System
 
         /// <summary>
         /// Get a do-nothing instance communicating that a service has already been added (in some other location).
-        /// Useful for when a dependent service AddXAction() method requires an IServiceAction instance, but you know it was already added (or are willing to risk the error if not) so you don't want to re-create the service action instance, or don't want decided what implementation to use for the instance.
+        /// Useful for when a dependent service AddXAction() method requires an <see cref="IServiceAction{TService}"/> instance, but you know it was already added (or are willing to risk the error if not) so you don't want to re-create the service action instance, or don't want decided what implementation to use for the instance.
         /// </summary>
         /// <remarks>
         /// Note: there should be no reason to use this method since it is now easy to pass service action instances. Still, this method is provided if needed. In that case, just ignore the obsolete warning at the call site.
@@ -52,7 +52,7 @@ namespace System
         }
 
         /// <summary>
-        /// Chooses single-run (<see cref="IServiceActionExtensions.NewSingleRun{TService}(IServiceActionExtensionMethodBase, Action{IServiceCollection})"/>) as the default constructor for <see cref="IServiceAction{TService}"/> instances.
+        /// Chooses single-run (<see cref="IServiceActionExtensions.NewSingleRun{TService}(IServiceActionExtensionMethodBase, Action{IServiceCollection})"/>) as the default implementation for <see cref="IServiceAction{TService}"/> instances.
         /// </summary>
         public static IServiceAction<TService> New<TService>(this IServiceAction _,
             Action<IServiceCollection> servicesAction)
