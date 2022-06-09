@@ -52,7 +52,7 @@ namespace System
         }
 
         /// <summary>
-        /// Chooses single-run (<see cref="IServiceActionExtensions.NewSingleRun{TService}(IServiceActionExtensionMethodBase, Action{IServiceCollection})"/>) as the default implementation for <see cref="IServiceAction{TService}"/> instances.
+        /// Chooses single-run (<see cref="IServiceActionExtensions.NewSingleRun{TService}(IServiceAction, Action{IServiceCollection})"/>) as the default implementation for <see cref="IServiceAction{TService}"/> instances.
         /// </summary>
         public static IServiceAction<TService> New<TService>(this IServiceAction _,
             Action<IServiceCollection> servicesAction)
